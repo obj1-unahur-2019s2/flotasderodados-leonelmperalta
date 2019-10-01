@@ -1,0 +1,46 @@
+import municipalidad.*
+import rodados.*
+
+
+	
+test " pesoTotalFlota "{
+	var deportes = new municipalidad.Dependencia(empleados = 45)
+	var cultura = new municipalidad.Dependencia(empleados = 31)
+	var cachito = new rodados.Corsa(color = "rojo")
+	
+	deportes.agregarAFlota(cachito)
+	deportes.agregarAFlota(new rodados.Corsa(color= "verde"))
+	deportes.agregarAFlota(new rodados.Kwid(tieneTanqueAdicional = true))
+	deportes.agregarAFlota(new rodados.Especial(capacidad = 5, velocidad = 160, peso = 1200 , color = "beige"))
+	cultura.agregarAFlota(cachito)
+	cultura.agregarAFlota(new rodados.Kwid(tieneTanqueAdicional = true))
+	cultura.agregarAFlota(new rodados.Kwid(tieneTanqueAdicional = true))
+	cultura.agregarAFlota(new rodados.Kwid(tieneTanqueAdicional = false))
+	cultura.agregarAFlota(trafic)
+	trafic.interior(interiorPopular)
+	trafic.motor(motorBataton)
+	
+	assert.equals(5150, deportes.pesoTotalFlota())
+	assert.equals(10700, cultura.pesoTotalFlota())
+}
+
+test " esta bien equipada "{
+	var deportes = new municipalidad.Dependencia(empleados = 45)
+	var cultura = new municipalidad.Dependencia(empleados = 31)
+	var cachito = new rodados.Corsa(color = "rojo")
+	
+	deportes.agregarAFlota(cachito)
+	deportes.agregarAFlota(new rodados.Corsa(color= "verde"))
+	deportes.agregarAFlota(new rodados.Kwid(tieneTanqueAdicional = true))
+	deportes.agregarAFlota(new rodados.Especial(capacidad = 5, velocidad = 160, peso = 1200 , color = "beige"))
+	cultura.agregarAFlota(cachito)
+	cultura.agregarAFlota(new rodados.Kwid(tieneTanqueAdicional = true))
+	cultura.agregarAFlota(new rodados.Kwid(tieneTanqueAdicional = true))
+	cultura.agregarAFlota(new rodados.Kwid(tieneTanqueAdicional = false))
+	cultura.agregarAFlota(trafic)
+	trafic.interior(interiorPopular)
+	trafic.motor(motorBataton)
+	
+	assert.that(deportes.estaBienEquipada())
+	assert.notThat(cultura.estaBienEquipada())
+}
