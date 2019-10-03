@@ -1,0 +1,15 @@
+import municipalidad.*
+import rodados.*
+import pedidos.*
+
+describe "flota de rodados"{
+	const cachito = new Corsa()
+	const pedido = new Pedido(
+		distanciaARecorrer = 960, 
+		tiempoMaximo = 8, 
+		cantidadPasajeros = 4 , 
+		coloresIncompatibles = #("azul", "negro"))
+	)
+	
+	
+}

@@ -1,7 +1,11 @@
-
+import wollok.game.*
 
 class Corsa {
 	var property color
+	var position
+	method position(){
+		return self.Position()
+	}
 	method velocidad() = 150
 	method peso() = 1300
 	method capacidad()= 4	
